@@ -36,12 +36,7 @@
 }
 
 body {
-  min-height: 100vh;
-  min-width: 100vw;
   background-color: var(--background);
-  overflow-x: hidden;
-  display: flex;
-  justify-content: center;
 }
 
 header {
@@ -193,6 +188,4 @@ form {
   background-color: var(--background);
 }
 
-
 /* ? CREATED BY BRADYYYYYY */
-
