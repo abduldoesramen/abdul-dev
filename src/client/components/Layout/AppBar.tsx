@@ -1,24 +1,20 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router";
-import PersonIcon from '@mui/icons-material/Person';
+import BookIcon from '@mui/icons-material/Book';
+import { Grid } from "@mui/material";
+import LanguageIcon from '@mui/icons-material/Language';
+import FaceIcon from '@mui/icons-material/Face';
+import ElectricBoltTwoToneIcon from '@mui/icons-material/ElectricBoltTwoTone';
 
 const pages = [
-  { name: "About me", path: "/" },
-  { name: "What I'm Reading", path: "/books" },
-  { name: "Japanese Blog", path: "/blog" },
+  { name: "About me", icon: <FaceIcon />, path: "/" },
+  { name: "What I'm Reading", icon: <BookIcon />, path: "/books" },
+  { name: "Japanese Blog", icon: <LanguageIcon />, path: "/blog" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -49,7 +45,7 @@ function NavBar() {
     <AppBar position="static" color="transparent">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <PersonIcon
+          <ElectricBoltTwoToneIcon
             sx={{ mr: 1, color: "beige"  }}
           />
           <Typography
@@ -69,17 +65,20 @@ function NavBar() {
           >
             Abdulrehman
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { sm: "flex" }, justifyContent: "flex-end" }}>
+          <Grid container spacing={2} sx={{ flexGrow: 1, display: { sm: "flex" }, justifyContent: "flex-end"}}>
             {pages.map((page) => (
               <Button
                 key={page.name}
                 onClick={() => handleNavLinkClick(page.path)}
                 sx={{ my: 2, color: "beige", display: "block" }}
               >
-                {page.name}
+                <Grid container direction="row" alignItems="center" spacing={1}>
+                  {page.icon}
+                  {page.name}
+                </Grid>
               </Button>
             ))}
-          </Box>
+          </Grid>
         </Toolbar>
       </Container>
     </AppBar>
