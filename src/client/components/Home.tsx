@@ -1,21 +1,22 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Grid, ListItem } from "@mui/material";
 import Layout from "./Layout/Layout.js";
-import { ListItem } from "@mui/material";
-import meAtSea from "../../../public/meAtSea.jpg";
+import meAtSea from "../assets/meAtSea.png";
+import qantasLogo from "../assets/qantasLogo.png";
 
 const aboutMe = `
-                I'm a Software Engineer currently working in Qantas Airways,
-                passionate about web development! I'll be using this website to
-                share my learnings and experiences. I'll also be writing about
-                my experiences with learning Japanese, and what books I'm
-                currently reading.
+I'm a Software Engineer currently working in Qantas Loyalty,
+passionate about web development! I made this website to
+share my learnings with the world. I'll also be writing about
+my challenges and experiences with learning Japanese (currently JLPT N4 level), and what books I'm
+currently reading. Stay tuned for more!
 `;
 
-const workExperience = `
-Airline Operations, Project Analyst
-Group Cyber, Cybersecurity Analyst
-Qantas Loyalty, DevOps Engineer
-Qantas Loyalty Money, Fullstack Software Engineer
+const qantasExperience = `
+I've been through a ton of different roles in Qantas. From creating an automated no-code solution to track and categorise airport delays across the world, to producing Risk Assessments for executive stakeholders in Group Cyber - I've actually ended up loving development in my fourth and final rotation. 
+`;
+
+const simplySeatedExperience = `
+My first role had me working as an intern inside a warehouse! (no, seriously) We were a small group of 4 developers creating the next cutting edge inventory management system called "Wueyo". This gave me my first taste of full stack development, and how it can be quite a chaotic, challenging but very exciting and rewarding role. 
 `;
 
 const Home = () => {
@@ -40,27 +41,23 @@ const Home = () => {
           </Grid>
           <Grid width={500}>
             <div>
-              {/* {" "}
-              <img src={meAtSea} alt="logo" /> */}
+              <img src={meAtSea} alt="logo" width={200} height={200} />
             </div>
           </Grid>
         </Grid>
         {/* Qantas Experience */}
         <Grid container direction="row" alignItems="center" spacing={2}>
           <Grid width={500}>
-            <p>Image Placeholder</p>
+            <img src={qantasLogo} alt="logo" width={200} height={200} />
           </Grid>
           <Grid width={500}>
-            <p>{workExperience}</p>
+            <p>{qantasExperience}</p>
           </Grid>
         </Grid>
         {/* Simply Seated Experience */}
         <Grid container direction="row" alignItems="center" spacing={2}>
           <Grid width={500}>
-            <p>
-              Coded a lot of cool stuff for Simply Seated's in house Inventory
-              Management Web App!
-            </p>
+            <p>{simplySeatedExperience}</p>
           </Grid>
           <Grid width={500}>
             <p>Image Placeholder</p>
