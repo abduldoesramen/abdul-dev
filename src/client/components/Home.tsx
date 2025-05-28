@@ -1,6 +1,7 @@
 import { Box, Container, Grid } from "@mui/material";
 import Layout from "./Layout/Layout.js";
 import { ListItem } from "@mui/material";
+import meAtSea from "../../../public/meAtSea.jpg";
 
 const aboutMe = `
                 I'm a Software Engineer currently working in Qantas Airways,
@@ -10,132 +11,64 @@ const aboutMe = `
                 currently reading.
 `;
 
+const workExperience = `
+Airline Operations, Project Analyst
+Group Cyber, Cybersecurity Analyst
+Qantas Loyalty, DevOps Engineer
+Qantas Loyalty Money, Fullstack Software Engineer
+`;
+
 const Home = () => {
   return (
     <Layout>
       {/* Seperate Container for heading  */}
-      <Grid container direction="column" alignItems="center" spacing={2}>
-        <p style={{ fontSize: "100px" }}>A bit about me...</p>
-      </Grid>
-
       <Grid
         container
         direction="column"
-        sx={{
-          display: "flex", // Make this Box a flex container
-          justifyContent: "center", // Horizontally center its content
-          // alignItems: "center", // Vertically center its content (if height allows)
-          minHeight: "100vh", // Optional: Make it take full viewport height
-          width: "100%", // Ensure it spans full width
-          border: "1px solid red", // For debugging layout
-        }}
+        alignItems="center"
+        spacing={2}
+        marginBottom="3rem"
       >
-        <Grid container direction="row" alignItems="center">
-          <Grid
-            size={6}
-            direction="row"
-            alignItems="center"
-            justifySelf="flex-end"
-            sx={{
-              border: "1px solid blue",
-            }}
-          >
-            <ListItem
-              sx={{
-                width: "100%", // Ensure ListItem takes full width of Grid item
-                justifyContent: "center", // Center content if ListItem is flex
-              }}
-            >
-              {aboutMe}
-            </ListItem>
+        <p style={{ fontSize: "100px" }}>A bit about me...</p>
+      </Grid>
+
+      {/* About Me */}
+      <Grid container direction="column" alignItems="center" spacing={2}>
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid width={500}>
+            <p>{aboutMe}</p>
           </Grid>
-          <Grid
-            size={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              border: "1px solid blue",
-            }}
-          >
-            <ListItem>
-              <p>Column 2, Row 1</p>
-            </ListItem>
+          <Grid width={500}>
+            <div>
+              {/* {" "}
+              <img src={meAtSea} alt="logo" /> */}
+            </div>
           </Grid>
-          <Grid
-            size={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              border: "1px solid blue",
-            }}
-          >
-            <ListItem>
-              <p>Column 1, Row 2</p>
-            </ListItem>
+        </Grid>
+        {/* Qantas Experience */}
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid width={500}>
+            <p>Image Placeholder</p>
           </Grid>
-          <Grid
-            size={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              border: "1px solid blue",
-            }}
-          >
-            <ListItem>
-              <p>Column 2, Row 2</p>
-            </ListItem>
+          <Grid width={500}>
+            <p>{workExperience}</p>
+          </Grid>
+        </Grid>
+        {/* Simply Seated Experience */}
+        <Grid container direction="row" alignItems="center" spacing={2}>
+          <Grid width={500}>
+            <p>
+              Coded a lot of cool stuff for Simply Seated's in house Inventory
+              Management Web App!
+            </p>
+          </Grid>
+          <Grid width={500}>
+            <p>Image Placeholder</p>
           </Grid>
         </Grid>
       </Grid>
-
-      {/* <Grid sx={{ flexGrow: 1 }} alignItems="center" spacing={2}>
-        <Grid container spacing={2} alignItems="center" justifyContent="center">
-          <Grid>
-            <Grid container direction="column" spacing={2}>
-              <Grid>
-                <p>
-                  I'm a Software Engineer currently working in Qantas Airways,
-                  passionate about web development! I'll be using this website
-                  to share my learnings and experiences. I'll also be writing
-                  about my experiences with learning Japanese, and what books
-                  I'm currently reading.
-                </p>
-              </Grid>
-              <Grid>Row 2 in Left Column</Grid>
-            </Grid>
-          </Grid>
-              <p>Airline Operations, Project Analyst</p>
-              <p>Group Cyber, Cybersecurity Analyst</p>
-              <p>Qantas Loyalty, DevOps Engineer</p>
-              <p>Qantas Loyalty Money, Fullstack Software Engineer</p>
-          <Grid>
-            <Grid container direction="column" spacing={2}>
-              <Grid>Row 1 in Right Column</Grid>
-              <Grid>Row 2 in Right Column</Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid> */}
     </Layout>
   );
 };
 
 export default Home;
-
-// <Box sx={{ flexGrow: 1 }}>
-// <Grid container direction="column" alignItems="center" spacing={2}>
-//   <Grid
-//     container
-//     direction="column"
-//     sx={{ width: "30%", marginTop: "50px" }}
-//     spacing={2}
-//   >
-//     <Grid>
-//       {/* Row 1 in Left Column */}
-//     </Grid>
-//     <Grid>
-//       {/* Row 1 in Left Column */}
-//     </Grid>
-//   </Grid>
-// </Grid>
-// </Box>
