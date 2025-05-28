@@ -1,32 +1,26 @@
 import "./App.css";
-import { useState } from "react";
+import Layout from "./components/Layout/Layout.js";
+import Blog from "./components/Blog.js";
+import Books from "./components/Books.js";
+import Home from "./components/Home.js";
 import Header from "./Header.js";
-import axios from "axios";
+import { BrowserRouter, Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
 
 function App() {
-  const [fortune, setFortune] = useState("Any fortune acquired from the Genie goes here...");
-
-  const handleClick = () => {
-    setFortune("Getting fortune...")
-    axios.get('/api/fortune')
-    .then((res:any) => {
-      console.log(res)
-      setFortune(res.data)
-    })
-    .catch((err:any) => {
-      console.error(err)
-      setFortune("Genie (server) could not be reached :(")
-    })
-  }
-
   return (
-    <main>
-      <Header />
-      <div id="center-area">
-        <button onClick={handleClick}>Get Fortune</button>
-        <h2 id="fortune">{fortune}</h2>
-      </div>
-    </main>
+    <BrowserRouter>
+      <main>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route index element={<Home/>}/>
+            <Route path="/blog" element={<Blog/>}/>
+            <Route path="/books" element={<Books />}/>
+            <Route path="/header" element={<Header/>}/>
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
