@@ -13,11 +13,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router";
+import PersonIcon from '@mui/icons-material/Person';
 
 const pages = [
   { name: "About me", path: "/" },
   { name: "What I'm Reading", path: "/books" },
-  { name: "Blog", path: "/blog" },
+  { name: "Japanese Blog", path: "/blog" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -30,13 +31,6 @@ function NavBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -55,8 +49,8 @@ function NavBar() {
     <AppBar position="static" color="transparent">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon
-            sx={{ display: { xs: "none", md: "flex", color: "beige" }, mr: 1 }}
+          <PersonIcon
+            sx={{ mr: 1, color: "beige"  }}
           />
           <Typography
             variant="h6"
@@ -65,7 +59,7 @@ function NavBar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
+              display: { xs: "none", sm: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -75,51 +69,7 @@ function NavBar() {
           >
             Abdulrehman
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.name} onClick={() => handleNavLinkClick(page.path)}>
-                  <Typography sx={{ textAlign: "center" }}>{page.name}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: "beige" }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "beige",
-              textDecoration: "none",
-            }}
-          >
-            Abdulrehman
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { sm: "flex" }, justifyContent: "flex-end" }}>
             {pages.map((page) => (
               <Button
                 key={page.name}
@@ -129,32 +79,6 @@ function NavBar() {
                 {page.name}
               </Button>
             ))}
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: "center" }}>
-                    {setting}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>
