@@ -12,12 +12,18 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router";
 
-const pages = ["About me", "What I'm Reading", "Blog"];
+const pages = [
+  { name: "About me", path: "/" },
+  { name: "What I'm Reading", path: "/books" },
+  { name: "Blog", path: "/blog" },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function NavBar() {
+  const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -40,12 +46,17 @@ function NavBar() {
     setAnchorElUser(null);
   };
 
+  const handleNavLinkClick = (path: string) => {
+    handleCloseNavMenu(); // Close the menu first
+    navigate(path); // Navigate to the specified path
+  };
+
   return (
     <AppBar position="static" color="transparent">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon
-            sx={{ display: { xs: "none", md: "flex", color: "white" }, mr: 1 }}
+            sx={{ display: { xs: "none", md: "flex", color: "beige" }, mr: 1 }}
           />
           <Typography
             variant="h6"
@@ -58,7 +69,7 @@ function NavBar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "white",
+              color: "beige",
               textDecoration: "none",
             }}
           >
@@ -83,13 +94,13 @@ function NavBar() {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <MenuItem key={page.name} onClick={() => handleNavLinkClick(page.path)}>
+                  <Typography sx={{ textAlign: "center" }}>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: "white" }} />
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: "beige" }} />
           <Typography
             variant="h5"
             noWrap
@@ -102,7 +113,7 @@ function NavBar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "white",
+              color: "beige",
               textDecoration: "none",
             }}
           >
@@ -111,11 +122,11 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                key={page.name}
+                onClick={() => handleNavLinkClick(page.path)}
+                sx={{ my: 2, color: "beige", display: "block" }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>

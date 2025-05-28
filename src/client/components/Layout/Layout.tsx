@@ -6,13 +6,13 @@ function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-    <AppBar />
-    <Container disableGutters maxWidth={false}>
-      <main>
-        {children}
-      </main> 
-      <Footer/>
-    </Container>
+      <AppBar />
+      <Container disableGutters maxWidth={false}>
+        <main>
+          {children}
+        </main> 
+        <Footer/>
+      </Container>
     </>
   );
 }
