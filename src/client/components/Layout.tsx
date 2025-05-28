@@ -8,11 +8,11 @@ function Layout({ children }: { children: React.ReactNode }) {
     <>
     <AppBar />
     <Container disableGutters maxWidth={false}>
-    <main>
-      {children}
-    </main> 
+      <main>
+        {children}
+      </main> 
+      <Footer/>
     </Container>
-    <footer><Footer/></footer>
     </>
   );
 }
