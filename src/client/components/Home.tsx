@@ -2,6 +2,7 @@ import { Grid, ListItem } from "@mui/material";
 import Layout from "./Layout/Layout.js";
 import meAtSea from "../assets/meAtSea.png";
 import qantasLogo from "../assets/qantasLogo.png";
+import simplySeatedLogo from "../assets/simplySeatedLogo.avif";
 
 const aboutMe = `
 I'm a Software Engineer currently working in Qantas Loyalty,
@@ -60,7 +61,7 @@ const Home = () => {
             <p>{simplySeatedExperience}</p>
           </Grid>
           <Grid width={500}>
-            <p>Image Placeholder</p>
+            <img src={simplySeatedLogo} alt="logo" width={200} height={200} />
           </Grid>
         </Grid>
       </Grid>
