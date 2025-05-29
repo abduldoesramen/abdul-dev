@@ -1,0 +1,5 @@
+.book-grid:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}

@@ -29,26 +29,24 @@ const Home = () => {
         direction="column"
         alignItems="center"
         spacing={2}
-        marginBottom="3rem"
+        flex={1}
       >
-        <p style={{ fontSize: "100px" }}>A bit about me...</p>
-      </Grid>
+        <p style={{ fontSize: "100px", marginBottom: "3rem" }}>
+          A bit about me...
+        </p>
 
-      {/* About Me */}
-      <Grid container direction="column" alignItems="center" spacing={2}>
+        {/* About Me */}
         <Grid container direction="row" alignItems="center" spacing={2}>
           <Grid width={500}>
             <p>{aboutMe}</p>
           </Grid>
-          <Grid width={500}>
-            <div>
-              <img src={meAtSea} alt="logo" width={200} height={200} />
-            </div>
+          <Grid width={200}>
+            <img src={meAtSea} alt="logo" width={200} height={200} />
           </Grid>
         </Grid>
         {/* Qantas Experience */}
         <Grid container direction="row" alignItems="center" spacing={2}>
-          <Grid width={500}>
+          <Grid width={200}>
             <img src={qantasLogo} alt="logo" width={200} height={200} />
           </Grid>
           <Grid width={500}>
@@ -60,7 +58,7 @@ const Home = () => {
           <Grid width={500}>
             <p>{simplySeatedExperience}</p>
           </Grid>
-          <Grid width={500}>
+          <Grid width={200}>
             <img src={simplySeatedLogo} alt="logo" width={200} height={200} />
           </Grid>
         </Grid>
