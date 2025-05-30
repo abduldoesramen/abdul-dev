@@ -7,6 +7,11 @@
   width: 38%;
 }
 
+.rowContainer img {
+  width: 12.5rem;
+  height: 12.5rem;
+}
+
 @media (max-width: 1200px) {
   .rowContainer {
     flex-direction: column;
@@ -19,9 +24,4 @@
   .rowContainer p {
     order: 1;
   }
-}
-
-img {
-  width: 12.5rem;
-  height: 12.5rem;
 }
