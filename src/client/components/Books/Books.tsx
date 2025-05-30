@@ -1,11 +1,10 @@
 import { Grid, Typography } from "@mui/material";
-import Layout from "./Layout/Layout.js";
-import qantasLogo from "../assets/qantasLogo.png";
-import beforeCoffeeGetsCold from "../assets/beforeCoffeeGetsCold.jpg";
-import musashi from "../assets/musashi.jpg";
+import Layout from "../Layout/Layout.js";
+import beforeCoffeeGetsCold from "../../assets/beforeCoffeeGetsCold.jpg";
+import musashi from "../../assets/musashi.jpg";
 import { useEffect, useState } from "react";
 import "./Books.css";
-import Header from "./Layout/Header.js";
+import Header from "../Layout/Header.js";
 
 // interface Book {
 //   title: string;

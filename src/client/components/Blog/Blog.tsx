@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
-import Header from "./Layout/Header.js";
-import Layout from "./Layout/Layout.js";
+import Header from "../Layout/Header.js";
+import Layout from "../Layout/Layout.js";
 
 const Blog = () => {
   return (
