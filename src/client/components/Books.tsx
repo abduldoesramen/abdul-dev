@@ -5,6 +5,7 @@ import beforeCoffeeGetsCold from "../assets/beforeCoffeeGetsCold.jpg";
 import musashi from "../assets/musashi.jpg";
 import { useEffect, useState } from "react";
 import "./Books.css";
+import Header from "./Layout/Header.js";
 
 // interface Book {
 //   title: string;
@@ -36,14 +37,8 @@ const Books = () => {
   return (
     <Layout>
       {/* Seperate Container for heading  */}
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        spacing={2}
-        marginBottom="3rem"
-      >
-        <p style={{ fontSize: "100px" }}>Here's what I've been reading...</p>
+      <Grid container direction="column" alignItems="center" spacing={2}>
+        <Header title="Here's what I've been reading..." />
       </Grid>
 
       <Grid

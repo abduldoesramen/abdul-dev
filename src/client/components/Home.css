@@ -1,0 +1,27 @@
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  width: 38%;
+}
+
+@media (max-width: 1200px) {
+  .rowContainer {
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 4rem;
+  }
+  .rowContainer img {
+    order: 2;
+  }
+  .rowContainer p {
+    order: 1;
+  }
+}
+
+img {
+  width: 12.5rem;
+  height: 12.5rem;
+}

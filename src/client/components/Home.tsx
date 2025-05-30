@@ -3,6 +3,8 @@ import Layout from "./Layout/Layout.js";
 import meAtSea from "../assets/meAtSea.png";
 import qantasLogo from "../assets/qantasLogo.png";
 import simplySeatedLogo from "../assets/simplySeatedLogo.avif";
+import Header from "./Layout/Header.js";
+import "./Home.css";
 
 const aboutMe = `
 I'm a Software Engineer currently working in Qantas Loyalty,
@@ -23,7 +25,6 @@ My first role had me working as an intern inside a warehouse! (no, seriously) We
 const Home = () => {
   return (
     <Layout>
-      {/* Seperate Container for heading  */}
       <Grid
         container
         direction="column"
@@ -31,37 +32,19 @@ const Home = () => {
         spacing={2}
         flex={1}
       >
-        <p style={{ fontSize: "100px", marginBottom: "3rem" }}>
-          A bit about me...
-        </p>
-
-        {/* About Me */}
-        <Grid container direction="row" alignItems="center" spacing={2}>
-          <Grid width={500}>
-            <p>{aboutMe}</p>
-          </Grid>
-          <Grid width={200}>
-            <img src={meAtSea} alt="logo" width={200} height={200} />
-          </Grid>
-        </Grid>
-        {/* Qantas Experience */}
-        <Grid container direction="row" alignItems="center" spacing={2}>
-          <Grid width={200}>
-            <img src={qantasLogo} alt="logo" width={200} height={200} />
-          </Grid>
-          <Grid width={500}>
-            <p>{qantasExperience}</p>
-          </Grid>
-        </Grid>
-        {/* Simply Seated Experience */}
-        <Grid container direction="row" alignItems="center" spacing={2}>
-          <Grid width={500}>
-            <p>{simplySeatedExperience}</p>
-          </Grid>
-          <Grid width={200}>
-            <img src={simplySeatedLogo} alt="logo" width={200} height={200} />
-          </Grid>
-        </Grid>
+        <Header title="A bit about me..." />
+        <div className="rowContainer">
+          <p>{aboutMe}</p>
+          <img src={meAtSea} alt="picture of my face next to the sea" />
+        </div>
+        <div className="rowContainer">
+          <img src={qantasLogo} alt="qantas airways logo" />
+          <p>{qantasExperience}</p>
+        </div>
+        <div className="rowContainer">
+          <p>{simplySeatedExperience}</p>
+          <img src={simplySeatedLogo} alt="simply seated logo" />
+        </div>
       </Grid>
     </Layout>
   );
